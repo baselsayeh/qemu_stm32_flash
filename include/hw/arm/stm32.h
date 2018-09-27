@@ -133,6 +133,8 @@ enum {
     STM32_HASH_PERIPH,
     STM32_RNG_PERIPH,
     STM32_PERIPH_COUNT,
+	STM32_FLASH,
+	STM32_FLASH_REGS,
 };
 
 const char *stm32_periph_name(stm32_periph_t periph);
@@ -371,6 +373,20 @@ typedef struct Stm32crc Stm32crc;
 
 #define TYPE_STM32_CRC "stm32-crc"
 #define STM32_CRC(obj) OBJECT_CHECK(Stm32crc, (obj), TYPE_STM32_CRC)
+
+
+/* Flash */
+typedef struct Stm32Flash Stm32Flash;
+
+#define TYPE_STM32_FLASH "stm32-flash"
+#define STM32_FLASH(obj) OBJECT_CHECK(Stm32Flash, (obj), TYPE_STM32_FLASH)
+
+
+/* Flash Regs */
+typedef struct Stm32FlashRegs Stm32FlashRegs;
+
+#define TYPE_STM32_FLASH_REGS "stm32-flash-regs"
+#define STM32_FLASH_REGS(obj) OBJECT_CHECK(Stm32FlashRegs, (obj), TYPE_STM32_FLASH_REGS)
 
 
 /* STM32 MICROCONTROLLER - GENERAL */

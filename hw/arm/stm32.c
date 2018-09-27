@@ -340,4 +340,12 @@ void stm32_init(
 	/* CRC */
 	DeviceState *crc = qdev_create(NULL, "stm32-crc");
 	stm32_init_periph(crc, STM32_CRC, 0x40023000, NULL);
+
+	/* FLASH */
+	DeviceState *flash = qdev_create(NULL, "stm32-flash");
+	stm32_init_periph(flash, STM32_FLASH, 0x10000000, NULL);
+
+	/* FLASH regs */
+	DeviceState *flash_regs = qdev_create(NULL, "stm32-flash-regs");
+	stm32_init_periph(flash_regs, STM32_FLASH_REGS, 0x40022000, NULL);
 }
